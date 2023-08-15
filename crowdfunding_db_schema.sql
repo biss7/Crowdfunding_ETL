@@ -11,7 +11,7 @@ CREATE TABLE subcategory (
 );
 
 --create contact table
-CREATE TABLE contact (
+CREATE TABLE contacts (
 	contact_id INTEGER NOT NULL PRIMARY KEY,
 	first_name VARCHAR NOT NULL,
 	last_name VARCHAR NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE campaign (
 	spotlight BOOL NOT NULL,
 	category_id VARCHAR NOT NULL,
 	subcategory_id VARCHAR NOT NULL,
-	FOREIGN KEY (contact_id) REFERENCES contact(contact_id),
+	FOREIGN KEY (contact_id) REFERENCES contacts(contact_id),
 	FOREIGN KEY (category_id) REFERENCES category(category_id),
 	FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id)
 );
@@ -44,11 +44,11 @@ CREATE TABLE campaign (
 --verify table creation
 SELECT * FROM category;
 SELECT * FROM subcategory;
-SELECT * FROM contact;
+SELECT * FROM contacts;
 SELECT * FROM campaign;
 
 --verify table data
 SELECT * FROM category;
 SELECT * FROM subcategory;
-SELECT * FROM contact;
+SELECT * FROM contacts;
 SELECT * FROM campaign;
